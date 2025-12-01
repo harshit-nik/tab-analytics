@@ -1,13 +1,13 @@
-Tab Analytics — Chrome Extension
+#-----Tab Analytics — Chrome Extension
 
 A smart browser time-tracking extension built for productivity.
 
-Overview
+#-----Overview
 
 Tab Analytics is a lightweight Chrome extension that tracks how much time you spend on websites and provides a clean overview of total time and visits.
 Perfect for students, developers, and anyone who wants to manage digital productivity.
 
-Features
+#-----Features
 
 Tracks time spent per domain in real time
 
@@ -23,7 +23,7 @@ One-click Clear Data
 
 Works fully offline — data stored in chrome.storage.local
 
-Project Structure
+#-----Project Structure
 TAB-ANALYTICS/
 ├── manifest.json
 ├── background.js
@@ -38,7 +38,7 @@ TAB-ANALYTICS/
     ├── storage.js
     └── time.js
 
-Tech Stack
+#-----Tech Stack
 
 JavaScript (ES6)
 
@@ -46,7 +46,7 @@ Chrome Extensions API
 
 HTML + CSS
 
-Installation (Developer Mode)
+#-----Installation (Developer Mode)
 
 Clone or download the repository
 
@@ -58,7 +58,7 @@ Click Load Unpacked → Select project folder
 
 The extension will load instantly.
 
-How It Works
+#-----How It Works
 
 background.js → Monitors active tab and updates time every second
 
@@ -68,7 +68,7 @@ dashboard.js → Builds tables and overview dashboard
 
 popup.js → Shows quick stats and opens dashboard
 
-License — MIT License
+#-----License — MIT License
 
 Open-sourced under MIT License for free public and developer use.
 
@@ -79,3 +79,4 @@ Anyone can modify it
 Anyone can redistribute it
 
 No legal responsibility.
+
