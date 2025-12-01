@@ -1,0 +1,95 @@
+/* ======================================================
+   BASIC PAGE STYLING
+   ====================================================== */
+body {
+    width: 260px;                     /* popup width */
+    padding: 12px;                    /* inner spacing */
+    font-family: "Segoe UI", sans-serif;
+    background: linear-gradient(135deg, #0f0f0f, #1a1a1a);  /* dark gradient */
+    color: #e0e0e0;                   /* light text */
+}
+
+/* ======================================================
+   HEADER / TITLE
+   ====================================================== */
+h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    text-align: center;
+    
+    /* Neon text effect */
+    color: #49eaff;
+    text-shadow: 0 0 8px rgba(73,234,255,0.6);
+}
+
+/* ======================================================
+   STATS CONTAINER BOX
+   ====================================================== */
+#stats {
+    background: rgba(255, 255, 255, 0.05); /* light transparent box */
+    padding: 10px;
+    border-radius: 8px;
+
+    max-height: 180px;             /* scroll area height */
+    overflow-y: auto;              /* enable scroll for long list */
+
+    /* subtle border for premium look */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Each domain entry style */
+#stats p {
+    padding: 6px;
+    margin: 5px 0;
+    border-radius: 4px;
+
+    /* Slight transparent background */
+    background: rgba(255, 255, 255, 0.03);
+}
+
+/* ======================================================
+   BUTTON DESIGN
+   ====================================================== */
+button {
+    margin-top: 12px;
+    width: 100%;
+    padding: 10px;
+
+    /* Gradient button color */
+    background: linear-gradient(90deg, #00c6ff, #0072ff);
+
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+
+    /* Button glow */
+    box-shadow: 0 0 10px rgba(0, 114, 255, 0.4);
+
+    transition: 0.2s ease;
+}
+
+/* Button hover effect */
+button:hover {
+    background: linear-gradient(90deg, #009ed9, #005fcc);
+}
+
+
+.link-btn {
+    background: none;
+    color: #00eaff;
+    border: none;
+    padding: 8px 0;
+    display: block;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+}
+
+.link-btn:hover {
+    text-decoration: underline;
+}

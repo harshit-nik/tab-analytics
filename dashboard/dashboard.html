@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tab Analytics Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>📊 Dashboard</h2>
+        <ul>
+            <li id="overviewTab" class="active">Overview</li>
+            <li id="dailyTab">Daily Breakdown</li>
+            <li id="domainsTab">Domains</li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+
+        <!-- ⭐ Overview Section -->
+        <section id="overviewSection">
+            <h1>Browsing Analytics</h1>
+
+            <div class="cards">
+                <div class="card">
+                    <h3>Total Time</h3>
+                    <p id="totalTime">0s</p>
+                </div>
+
+                <div class="card">
+                    <h3>Total Visits</h3>
+                    <p id="totalVisits">0</p>
+                </div>
+            </div>
+
+            <h2>Top Sites</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Domain</th>
+                        <th>Time Spent (s)</th>
+                        <th>Visits</th>
+                    </tr>
+                </thead>
+                <tbody id="domainTable"></tbody>
+            </table>
+        </section>
+
+        <!-- ⭐ Daily Breakdown Section -->
+        <section id="dailySection" style="display:none;">
+            <h1>Daily Breakdown</h1>
+            <p>This section will show day-wise time usage.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Total Time (s)</th>
+                    </tr>
+                </thead>
+                <tbody id="dailyTable"></tbody>
+            </table>
+        </section>
+
+        <!-- ⭐ Domains Section -->
+        <section id="domainsSection" style="display:none;">
+            <h1>All Domains</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Domain</th>
+                        <th>Time Spent (s)</th>
+                        <th>Visits</th>
+                    </tr>
+                </thead>
+                <tbody id="allDomainsTable"></tbody>
+            </table>
+        </section>
+
+    </div>
+
+    <script type="module" src="dashboard.js"></script>
+</body>
+</html>
