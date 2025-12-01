@@ -12,12 +12,12 @@ console.log("Service Worker Loaded");
 
 
 /* ----------------------------
-   END PREVIOUS SESSION (date-aware)
+   END PREVIOUS SESSION 
 -----------------------------*/
 async function endPreviousSession() {
   if (!activeDomain || !activeStartTime) return;
 
-  // Block internal pages
+  
   const blockedDomains = ["newtab", "extensions", "services.google.com"];
 
   if (
@@ -25,15 +25,15 @@ async function endPreviousSession() {
     activeDomain.includes("chrome")
   ) {
     console.log("Blocked domain skipped:", activeDomain);
-    return; // Do not store Chrome internal stats
+    return; 
   }
 
   const endTime = getCurrentTime();
-  const timeSpent = diffSeconds(activeStartTime, endTime); // seconds
+  const timeSpent = diffSeconds(activeStartTime, endTime); 
 
   let stats = await getData();
 
-  // ensure domain entry
+
   if (!stats[activeDomain]) {
     stats[activeDomain] = { totalTime: 0, visits: 0, byDate: {} };
   }
@@ -41,7 +41,6 @@ async function endPreviousSession() {
   stats[activeDomain].totalTime += timeSpent;
   stats[activeDomain].visits += 1;
 
-  // update date bucket (YYYY-MM-DD)
   const d = new Date();
   const yyyy = d.getFullYear();
   const mm = String(d.getMonth() + 1).padStart(2, "0");
@@ -65,7 +64,7 @@ function extractDomain(url) {
   try {
     const host = new URL(url).hostname;
 
-    // Skip internal Chrome pages
+    
     if (
       url.startsWith("chrome://") ||
       url.startsWith("chrome-extension://")
@@ -75,7 +74,7 @@ function extractDomain(url) {
 
     return host;
   } catch (err) {
-    return null; // Invalid URL
+    return null; 
   }
 }
 
@@ -86,7 +85,7 @@ function extractDomain(url) {
 chrome.tabs.onActivated.addListener(async ({ tabId }) => {
   console.log("Tab Activated:", tabId);
 
-  await endPreviousSession(); // Close previous tab session
+  await endPreviousSession(); 
 
   chrome.tabs.get(tabId, (tab) => {
     if (!tab || !tab.url) return;
@@ -108,7 +107,7 @@ chrome.tabs.onUpdated.addListener(async (tabId, changeInfo, tab) => {
 
   console.log("URL Updated:", changeInfo.url);
 
-  await endPreviousSession(); // End session for previous URL
+  await endPreviousSession(); 
 
   activeStartTime = getCurrentTime();
   activeDomain = extractDomain(changeInfo.url);
@@ -123,17 +122,17 @@ chrome.tabs.onUpdated.addListener(async (tabId, changeInfo, tab) => {
 chrome.windows.onFocusChanged.addListener(async (windowId) => {
   console.log("Window focus changed:", windowId);
 
-  await endPreviousSession(); // End session when window unfocused
+  await endPreviousSession(); 
 
   if (windowId === chrome.windows.WINDOW_ID_NONE) {
-    // User switched away from Chrome
+  
     activeTabId = null;
     activeStartTime = null;
     activeDomain = null;
     return;
   }
 
-  // If focus returns, detect the active tab
+  
   chrome.tabs.query({ active: true, lastFocusedWindow: true }, (tabs) => {
     if (!tabs || !tabs[0]) return;
 
