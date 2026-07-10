@@ -1,82 +1,100 @@
-#-----Tab Analytics — Chrome Extension
+# 📊 Tab Analytics – Chrome Extension
 
-A smart browser time-tracking extension built for productivity.
+A lightweight Chrome Extension that helps users track website usage, monitor browsing time, and analyze productivity through an interactive dashboard.
 
-#-----Overview
+---
 
-Tab Analytics is a lightweight Chrome extension that tracks how much time you spend on websites and provides a clean overview of total time and visits.
-Perfect for students, developers, and anyone who wants to manage digital productivity.
+## 🚀 Features
 
-#-----Features
+- ⏱️ Tracks time spent on each website in real time
+- 🌐 Counts total visits for every domain
+- 📅 Maintains daily browsing history
+- 📈 Interactive analytics dashboard
+- 📂 Export browsing data as CSV
+- 🗑️ One-click data reset
+- 💾 Stores data locally using `chrome.storage.local`
+- ⚡ Works completely offline
 
-Tracks time spent per domain in real time
+---
 
-Counts number of visits per website
+## 🛠️ Tech Stack
 
-Maintains daily usage history (date-wise)
+- JavaScript (ES6)
+- HTML5
+- CSS3
+- Chrome Extensions API
+- Chrome Storage API
 
-Dashboard provides a quick overview
+---
 
-Export data as CSV
+## 📂 Project Structure
 
-One-click Clear Data
-
-Works fully offline — data stored in chrome.storage.local
-
-#-----Project Structure
+```text
 TAB-ANALYTICS/
+│
 ├── manifest.json
 ├── background.js
+│
 ├── popup/
 │   ├── popup.html
 │   └── popup.js
+│
 ├── dashboard/
 │   ├── dashboard.html
 │   ├── dashboard.js
 │   └── dashboard.css
+│
 └── utils/
     ├── storage.js
     └── time.js
+```
 
-#-----Tech Stack
+---
 
-JavaScript (ES6)
+## ⚙️ Installation
 
-Chrome Extensions API
+1. Clone the repository
 
-HTML + CSS
+```bash
+git clone https://github.com/harshit-nik/tab-analytics.git
+```
 
-#-----Installation (Developer Mode)
+2. Open Chrome
 
-Clone or download the repository
+```
+chrome://extensions
+```
 
-Open Chrome → chrome://extensions/
+3. Enable **Developer Mode**
 
-Enable Developer Mode
+4. Click **Load unpacked**
 
-Click Load Unpacked → Select project folder
+5. Select the project folder
 
-The extension will load instantly.
+6. The extension is ready to use.
 
-#-----How It Works
+---
 
-background.js → Monitors active tab and updates time every second
+## 🧩 How It Works
 
-storage.js → Saves domain → time, visits, and date-wise stats
+- **background.js** → Tracks active tabs and updates browsing time.
+- **storage.js** → Stores time, visits, and daily statistics.
+- **popup.js** → Displays quick browsing statistics.
+- **dashboard.js** → Generates analytics dashboard and CSV export.
 
-dashboard.js → Builds tables and overview dashboard
+---
 
-popup.js → Shows quick stats and opens dashboard
+## 💡 Future Improvements
 
-#-----License — MIT License
+- Weekly and Monthly Reports
+- Productivity Score
+- Website Categories
+- Dark Mode
+- Data Backup & Restore
+- Browser Sync Support
 
-Open-sourced under MIT License for free public and developer use.
+---
 
-Anyone can use the code
+## 📜 License
 
-Anyone can modify it
-
-Anyone can redistribute it
-
-No legal responsibility.
-
+This project is licensed under the **MIT License**.
